@@ -4,21 +4,13 @@ This is a solution to the [Newsletter sign-up form with success message challeng
 
 ## Table of contents
 
-- [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
-## Overview
 
 ### The challenge
 
@@ -36,81 +28,91 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-## My process
 
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- JS
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- you can use an image as bullet in a ul (I knew it was possible but I had never used it, so it wasn't really something I learned, but still);
+- input elements have an outline when active! I couldn't style the border as the color I wanted, and it turned out to be because I needed to remove the outline first;
+- the z-index of the parent has to be set explicitly
+for the gradient shadow effect to work:
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+.some-div {
+  position: relative;
+  background: linear-gradient(90deg, lightblue, pink);
+  <!-- until I set this the ::before pseudoelemnt wouldn't show up -->
+  z-index: 0;
+}
+
+.some-div::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -1px;
+  background: inherit;
+  filter: blur(10px);
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+- a form's method should be post if it handles sensitive information like a user's email;
+- I have to prevent default behaviour in my validateForm(e) function or else nothing happens when you push the damn button;
+- learned a little bit more about regular expressions;
+- you can style a placeholder!!
+
+```
+.input::placeholder {
+  color: orange;
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+- not really something I learned, but something I'm getting better at: using classes in conbination with js to trigger style changes: 
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```
+    emailInput.classList.add('error');
+```
+
+```
+
+#email-address.error::placeholder {
+  color: var(--tomato);
+}
+```
+
+I know it's something silly but before now I just wouldn't have thought of it!
+
+- something else I'm proud of even though it's not exactly something I learned:
+
+```
+userMail.textContent = emailInput.value.trim();
+```
+
+```
+<p>A confirmation email has been sent to <strong id="user-mail">ash@loremcompany.com</strong>. 
+    Please open it and click the button inside to confirm your subscription.
+  </p>
+```
+
+I know it's not groundbreaking, but I'm so happy that I thought of it because it feels like I'm starting to get better at thinking like a developer!  
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Regular expressions still confuse me a lot, but I think that I'll get the hang of them by using them in practical projects instead of trying to remember the rules and patterns.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+I'm not very good at forms either, so I want to work on that as well.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@tortaruga](https://www.frontendmentor.io/profile/tortaruga)
