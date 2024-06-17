@@ -111,7 +111,7 @@ button {
 
 button:hover {
     background: linear-gradient(90deg, hsla(336, 100%, 61%, 1) 0%, hsla(4, 100%, 67%, 1) 100%);
-    background: -moz-linear-gradient(to left, hsla(336, 100%, 61%, 1) 0%, hsla(4, 100%, 67%, 1) 100%);
+    background: -moz-linear-gradient(180, hsla(336, 100%, 61%, 1) 0%, hsla(4, 100%, 67%, 1) 100%);
 }
 
 button:hover:before {
