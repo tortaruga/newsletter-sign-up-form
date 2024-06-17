@@ -26,11 +26,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./assets/images/Screenshot%202024-06-17%20at%2016-29-07%20Frontend%20Mentor%20Newsletter%20sign-up%20form%20with%20success%20message.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/form-validation-js-7LXqL4zsL0](https://your-solution-url.com)
 - Live Site URL: [https://tortaruga.github.io/newsletter-sign-up-form/#](https://tortaruga.github.io/newsletter-sign-up-form/#)
 
 
@@ -105,6 +105,7 @@ userMail.textContent = emailInput.value.trim();
   </p>
 ```
 
+this way the success message displays the email that was entered in the input field.
 I know it's not groundbreaking, but I'm so happy that I thought of it because it feels like I'm starting to get better at thinking like a developer!  
 
 ### Continued development
