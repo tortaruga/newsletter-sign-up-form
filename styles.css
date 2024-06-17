@@ -69,7 +69,9 @@ h1 {
 
 .txt-wrapper ul {
     list-style: url(./assets/images/icon-list.svg);
-    padding-left: 1.5rem;
+    padding-left: 0rem;
+    list-style-position: inside;
+    vertical-align: middle;
 }
 
 .txt-wrapper ul li {
@@ -117,8 +119,9 @@ background: -moz-linear-gradient(90deg, hsla(336, 100%, 61%, 1) 0%, hsla(4, 100%
     color: var(--dark-grey);
 }
 
-#email-address:active {
+#email-address:focus {
 border: 1px solid var(--dark-grey);
+outline: none;
 }
 
 #subscribe-btn {
