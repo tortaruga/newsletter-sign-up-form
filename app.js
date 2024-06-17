@@ -16,7 +16,9 @@ function validateForm(event) {
   } else {
     invalidEmail.style.display = 'inline';
     emailInput.style.color = 'var(--tomato)';
-    emailInput.style.border = 'var(--tomato)';
+    emailInput.style.borderColor = 'var(--tomato)';
+    emailInput.style.background = 'hsl(4, 100%, 67%, .2)';
+    emailInput.classList.add('error');
   }
 }
 

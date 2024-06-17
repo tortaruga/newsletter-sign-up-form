@@ -20,6 +20,11 @@
     box-sizing: border-box;
 }
 
+*:before, *:after {
+    content: '';
+    position: absolute;
+}
+
 body {
     background: var(--charcoal);
     font-family: 'reg';
@@ -42,7 +47,7 @@ main {
     background: var(--white);
     min-height: 100vh;
     color: var(--charcoal);
-    /* display: none; */
+    box-shadow: 0 10px 10px var(--dark-grey);
 }
 
 .img {
@@ -100,13 +105,22 @@ button {
     color: var(--white);
     font-family: 'bold';
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 
 button:hover {
     background: linear-gradient(90deg, hsla(336, 100%, 61%, 1) 0%, hsla(4, 100%, 67%, 1) 100%);
+    /* background: -moz-linear-gradient(90deg, hsla(336, 100%, 61%, 1) 0%, hsla(4, 100%, 67%, 1) 100%); */
+}
 
-background: -moz-linear-gradient(90deg, hsla(336, 100%, 61%, 1) 0%, hsla(4, 100%, 67%, 1) 100%);
-
+button:hover:before {
+    z-index: -1;
+    inset: -1px;
+    background: inherit;
+    border-radius: inherit;
+    filter: blur(15px);
+    translate: 0 .5rem;
 }
 
 #email-address {
@@ -122,6 +136,10 @@ background: -moz-linear-gradient(90deg, hsla(336, 100%, 61%, 1) 0%, hsla(4, 100%
 #email-address:focus {
 border: 1px solid var(--dark-grey);
 outline: none;
+}
+
+#email-address.error::placeholder {
+  color: var(--tomato);
 }
 
 #subscribe-btn {
