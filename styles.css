@@ -215,19 +215,19 @@ footer {
         padding: 1rem;
         border-radius: 1rem;
         gap :1rem;
-        /* display: none; */
-    }
+        
+    i8ì}
 
     .img {
         border-radius: 1rem;
         background: url(./assets/images/illustration-sign-up-desktop.svg) no-repeat;
         background-position: center;
         background-size: cover;    
-        flex: 2;
+        flex: 1;
     }
 
     .txt-wrapper {
-        flex: 2;
+        flex: 1;
     }
  
     .success-msg {
